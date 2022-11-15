@@ -12,7 +12,7 @@ export default class Search {
       store.setDropValue(e.target.value);
       store.setCurrentPage(1);
       window.location.hash =
-        this.dropValue === 5 ? "#shop/drop5" : "#shop/drop15";
+        this.dropValue === 4 ? "#shop/drop4" : "#shop/drop8";
     });
     this.dropRender = () => {
       this.dropValue = store.getDropValue();
@@ -31,8 +31,8 @@ export default class Search {
   }
   render() {
     this.$select.innerHTML = `
-   <option ${this.dropValue === 5 ? "selected" : ""} value="5">5개씩</option>
-   <option ${this.dropValue === 15 ? "selected" : ""} value="15">15개씩</option>
+   <option ${this.dropValue === 4 ? "selected" : ""} value="4">4개씩</option>
+   <option ${this.dropValue === 8 ? "selected" : ""} value="8">8개씩</option>
 `;
   }
 }

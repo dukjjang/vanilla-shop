@@ -3,7 +3,7 @@ export default class Store {
     this.items = [];
     const cartItems = JSON.parse(localStorage.getItem("cartItems"));
     this.cartItems = cartItems ? cartItems : [];
-    this.dropValue = 5;
+    this.dropValue = 4;
     this.currentPage = 1;
     this.keyword = "";
     this.searchItems = [];
