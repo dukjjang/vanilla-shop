@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
 }
 #root {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 a {
@@ -16,15 +16,33 @@ a {
   text-decoration: none;
 }
 .dropDown {
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  width: 100%;
+  height: 150px;
+  justify-content: center;
   align-items: center;
-  height: 50px;
+  color: white;
+  padding: 25px 60px;
+  margin-bottom: 30px;
+  position: relative;
+  background-image: url("./images/shopImage.jpg");
 }
-.dropDown > select {
-  margin-right: 15rem;
+.dropDown__select {
+  position: absolute;
+  right: 25px;
+  font-size: 17px;
+  border-radius: 10px;
 }
+.dropDown__input {
+  padding: 15px;
+  width: 270px;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  outline: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+
 #pagination {
   width: 100%;
   display: flex;
@@ -44,7 +62,7 @@ a {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: #8ecae6;
+  background-color: black;
   color: white;
   padding: 25px 60px;
   margin-bottom: 30px;

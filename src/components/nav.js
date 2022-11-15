@@ -3,10 +3,11 @@ export default class Nav {
     this.store = store;
     this.$element = document.createElement("div");
     this.$element.className = "navbar";
-    this.Links = [
-      { name: "home", path: "/" },
-      { name: "cart", path: "/cart" },
-    ];
+    const links = {
+      home: "/",
+      shop: "/#shop",
+      cart: "/#cart",
+    };
 
     this.updateNav = (path) => {
       this.path = path;
@@ -25,8 +26,8 @@ export default class Nav {
       } else this.cartItemsCount = 0;
       const link =
         this.path === "#cart"
-          ? `<a href="/#shop"><i class="bi bi-shop"></i></a>`
-          : `<a href="/#cart"><i data-type="bag" class="bi bi-bag-dash"></i></a>`;
+          ? `<a href="${links.shop}"><i class="bi bi-shop"></i></a>`
+          : `<a href="${links.cart}"><i data-type="bag" class="bi bi-bag-dash"></i></a>`;
       this.$element.innerHTML = `
          <h1><a href="#shop">Vanilla Shop</a></h1>
          <div id="navbar" class="nav">

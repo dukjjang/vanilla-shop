@@ -19,7 +19,8 @@ export default class DropDown {
   render() {
     console.log("this DropValue ?? ", this.dropValue);
     this.$element.innerHTML = `
-<select number=${this.dropValue}>
+<input class="dropDown__input"/>
+<select class="dropDown__select" number=${this.dropValue}>
    <option ${this.dropValue === 5 ? "selected" : ""} value="5">5개씩</option>
    <option ${this.dropValue === 15 ? "selected" : ""} value="15">15개씩</option>
 </select>
