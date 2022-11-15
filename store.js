@@ -70,6 +70,6 @@ export default class Store {
     this.currentPage = value;
   };
   getCurrentPage = () => {
-    return this.currentPage;
+    return Number(this.currentPage);
   };
 }

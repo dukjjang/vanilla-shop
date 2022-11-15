@@ -67,7 +67,7 @@ export default class Item {
   }
   render() {
     this.$item.innerHTML = `
-      <img width="220px" src="${this.image}" alt="" />
+      <img width="220px" height="250px"src="${this.image}" alt="" />
       <div class="details">
         <a><h3>${this.title}</h3></a>
         <p>${this.description}</p>
