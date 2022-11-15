@@ -28,7 +28,7 @@ export default class Nav {
           ? `<a href="/#shop"><i class="bi bi-shop"></i></a>`
           : `<a href="/#cart"><i data-type="bag" class="bi bi-bag-dash"></i></a>`;
       this.$element.innerHTML = `
-         <h1><a href="#shop">Jinji Shop</a></h1>
+         <h1><a href="#shop">Vanilla Shop</a></h1>
          <div id="navbar" class="nav">
            <div class="navLink">
            ${link}
