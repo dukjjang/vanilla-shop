@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.dropDown {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+}
+.dropDown > select {
+  margin-right: 15rem;
+}
+#pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pagination > a {
+  padding: 10px;
+  margin: 30px 20px;
+}
+#pagination button {
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8ecae6;
+  color: white;
+  padding: 25px 60px;
+  margin-bottom: 30px;
+}
+
+.cart {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.cart > a,
+.navLink > a {
+  margin: 0 5px;
+  font-size: 30px;
+  z-index: 1;
+  color: white;
+}
+
+.navLink {
+  position: relative;
+}
+.cartAmount {
+  position: absolute;
+  top: -9px;
+  right: 0px;
+  font-size: 10px;
+  background-color: rgba(237, 15, 119, 0.8);
+  padding: 3px 5px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.shop {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailContainer {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.detailContainer > a {
+  cursor: pointer;
+}
+
+.cartContainer {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .shop,
+  .cart {
+    grid-template-columns: repeat(2, 250px);
+  }
+}
+@media (min-width: 1024px) {
+  .shop,
+  .cart {
+    grid-template-columns: repeat(4, 250px);
+  }
+}
+
+.item {
+  height: 450px;
+  border: 2px solid #212529;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item > img {
+  max-width: 170px;
+  height: auto;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+}
+
+.details > a {
+  cursor: pointer;
+}
+
+.price-quantity {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  align-items: center;
+}
+
+.item__btns {
+  display: flex;
+  gap: 8px;
+  font-size: 20px;
+}
+.item__btn {
+  padding: 5px;
+  background-color: #8ecae6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.bi-dash-lg {
+  color: red;
+  cursor: pointer;
+}
+.bi-plus-lg {
+  color: green;
+  cursor: pointer;
+}
+#OfficeShirt-2 {
+  background-color: hotpink;
+}
