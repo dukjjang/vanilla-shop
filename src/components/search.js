@@ -11,8 +11,7 @@ export default class Search {
     this.$select.addEventListener("change", (e) => {
       store.setDropValue(e.target.value);
       store.setCurrentPage(1);
-      window.location.hash =
-        this.dropValue === 4 ? "#shop/drop4" : "#shop/drop8";
+      window.location.hash = `#shop/dtop${this.dropValue}`;
     });
     this.dropRender = () => {
       this.dropValue = store.getDropValue();
@@ -33,6 +32,7 @@ export default class Search {
     this.$select.innerHTML = `
    <option ${this.dropValue === 4 ? "selected" : ""} value="4">4개씩</option>
    <option ${this.dropValue === 8 ? "selected" : ""} value="8">8개씩</option>
+   <option ${this.dropValue === 16 ? "selected" : ""} value="16">16개씩</option>
 `;
   }
 }
