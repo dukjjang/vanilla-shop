@@ -15,7 +15,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.dropDown {
+.search {
   display: flex;
   width: 100%;
   height: 150px;

@@ -16,8 +16,20 @@ export default class Pagination {
         this.items = this.store.getItems();
       }
       this.dropValue = this.store.getDropValue();
-      this.buttonCount = this.items.length / this.dropValue;
+      this.searchItems = this.store.getSearchItems();
       this.currentPage = this.store.getCurrentPage();
+      const keyword = this.store.getKeyword();
+      if ((this.searchItems.length === 0, keyword === "")) {
+        this.buttonCount = this.items.length / this.dropValue;
+      } else {
+        this.buttonCount = this.searchItems.length / this.dropValue;
+        if (this.buttonCount + 1 < this.currentPage) {
+          this.store.setCurrentPage(Math.ceil(this.buttonCount));
+          shopRender();
+          this.pagiRender();
+        }
+      }
+
       this.render();
       $target.appendChild(this.$element);
     };
@@ -27,8 +39,16 @@ export default class Pagination {
     });
   }
   render() {
+    const prevNum =
+      this.currentPage > 1 ? this.currentPage - 1 : this.currentPage;
+    const nextNum =
+      this.currentPage < this.buttonCount
+        ? this.currentPage + 1
+        : this.currentPage;
     const pagiArray = [];
-    pagiArray.push(`<div> << </div>`);
+    pagiArray.push(
+      `<a href="/#shop/${prevNum}"><div data-currentnum="${prevNum}"> << </div></a>`
+    );
     for (let i = 0; i < Math.ceil(this.buttonCount); i++) {
       pagiArray.push(
         `<a href="/#shop/${i + 1}"><button class="pagination__btn ${
@@ -36,7 +56,9 @@ export default class Pagination {
         }" data-currentnum="${i + 1}" id="pagi-${i + 1}">${i + 1}</button></a>`
       );
     }
-    pagiArray.push(`<div> >> </div>`);
+    pagiArray.push(
+      `<a href="/#shop/${nextNum}"><div data-currentnum="${nextNum}"> >> </div></a>`
+    );
     this.$element.innerHTML = pagiArray.join("");
   }
 }

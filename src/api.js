@@ -6,6 +6,7 @@ export class Api {
   request = async function (url) {
     const res = await fetch(`${BASE_URL}${url}`);
     const data = await res.json();
+    console.log(data);
     return data;
   };
 }

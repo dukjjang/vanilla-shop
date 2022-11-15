@@ -12,7 +12,6 @@ export default class Shop {
     this.$target = $target;
     this.shopRender = async () => {
       this.$element.innerHTML = "";
-
       try {
         if (this.store.items.length === 0) {
           const res = await this.api.request("/products");
@@ -24,10 +23,23 @@ export default class Shop {
         this.currentPage = this.store.getCurrentPage();
         this.dropValue = this.store.getDropValue();
         const lastNum = this.currentPage * this.dropValue;
-        this.filteredItems = this.items.slice(
-          lastNum - this.dropValue,
-          lastNum
-        );
+        const keyword = this.store.getKeyword();
+
+        if (keyword) {
+          this.searchItems = this.items.filter((i) => {
+            return i.title.toLowerCase().includes(keyword);
+          });
+          this.store.setSearchItems(this.searchItems);
+          this.filteredItems = this.searchItems.slice(
+            lastNum - this.dropValue,
+            lastNum
+          );
+        } else {
+          this.filteredItems = this.items.slice(
+            lastNum - this.dropValue,
+            lastNum
+          );
+        }
         this.render();
         this.$target.appendChild(this.$element);
       } catch (err) {}

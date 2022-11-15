@@ -5,6 +5,8 @@ export default class Store {
     this.cartItems = cartItems ? cartItems : [];
     this.dropValue = 5;
     this.currentPage = 1;
+    this.keyword = "";
+    this.searchItems = [];
   }
 
   getItems = () => {
@@ -69,5 +71,22 @@ export default class Store {
   };
   getCurrentPage = () => {
     return Number(this.currentPage);
+  };
+  setKeyword = (keyword) => {
+    if (keyword === "") {
+      this.searchItems = [];
+      this.currentPage = 1;
+    }
+
+    this.keyword = keyword;
+  };
+  getKeyword = () => {
+    return this.keyword;
+  };
+  setSearchItems = (searchItems) => {
+    this.searchItems = searchItems;
+  };
+  getSearchItems = () => {
+    return this.searchItems;
   };
 }

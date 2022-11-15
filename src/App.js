@@ -2,9 +2,8 @@ import Shop from "./components/shop.js";
 import Store from "../store.js";
 import Nav from "./components/nav.js";
 import Cart from "./components/cart.js";
-import DropDown from "./components/dropDown.js";
+import Search from "./components/search.js";
 import Pagination from "./components/pagination.js";
-import { Api } from "./api.js";
 export default class App {
   constructor({ $target }) {
     window.location.hash = "";
@@ -46,15 +45,17 @@ export default class App {
     });
 
     const cart = new Cart({ $target, store, navRender: nav.render });
-    const drop = new DropDown({
-      $target,
-      store,
-      shopRender: shop.shopRender,
-    });
     const pagi = new Pagination({
       $target,
       shopRender: shop.shopRender,
       store,
+    });
+
+    const drop = new Search({
+      $target,
+      store,
+      shopRender: shop.shopRender,
+      pagiRender: pagi.pagiRender,
     });
     nav.updateNav();
     drop.dropRender();
