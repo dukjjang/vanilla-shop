@@ -10,7 +10,6 @@ export default class Shop {
     this.$element = document.createElement("div");
     this.$element.className = "shop";
     this.$target = $target;
-
     this.shopRender = async () => {
       this.$element.innerHTML = "";
 
@@ -19,33 +18,18 @@ export default class Shop {
           const res = await this.api.request("/products");
           await this.store.setItems(res);
           this.items = this.store.getItems();
-
-          this.currentPage = this.store.getCurrentPage();
-          this.dropValue = this.store.getDropValue();
-          console.log("currnt", this.currentPage, "drop", this.dropValue);
-
-          const lastNum = this.currentPage * this.dropValue;
-          this.filteredItems = this.items.slice(
-            lastNum - this.dropValue,
-            lastNum
-          );
-
-          this.render();
-          this.$target.appendChild(this.$element);
         } else {
           this.items = this.store.getItems();
-          this.currentPage = this.store.getCurrentPage();
-          this.dropValue = this.store.getDropValue();
-
-          const lastNum = this.currentPage * this.dropValue;
-          this.filteredItems = this.items.slice(
-            lastNum - this.dropValue,
-            lastNum
-          );
-
-          this.render();
-          this.$target.appendChild(this.$element);
         }
+        this.currentPage = this.store.getCurrentPage();
+        this.dropValue = this.store.getDropValue();
+        const lastNum = this.currentPage * this.dropValue;
+        this.filteredItems = this.items.slice(
+          lastNum - this.dropValue,
+          lastNum
+        );
+        this.render();
+        this.$target.appendChild(this.$element);
       } catch (err) {}
     };
   }
