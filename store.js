@@ -59,14 +59,12 @@ export default class Store {
   };
 
   setDropValue = (value) => {
-    console.log("setDropValue", value);
     this.dropValue = Number(value);
   };
   getDropValue = () => {
     return this.dropValue;
   };
   setCurrentPage = (value) => {
-    console.log("currentPage set", value);
     this.currentPage = value;
   };
   getCurrentPage = () => {

@@ -11,13 +11,11 @@ export default class DropDown {
     });
     this.dropRender = () => {
       this.dropValue = store.getDropValue();
-      console.log("getDropValue", store.getDropValue());
       this.render();
       $target.appendChild(this.$element);
     };
   }
   render() {
-    console.log("this DropValue ?? ", this.dropValue);
     this.$element.innerHTML = `
 <input class="dropDown__input"/>
 <select class="dropDown__select" number=${this.dropValue}>

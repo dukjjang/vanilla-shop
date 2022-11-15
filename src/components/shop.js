@@ -25,7 +25,6 @@ export default class Shop {
           console.log("currnt", this.currentPage, "drop", this.dropValue);
 
           const lastNum = this.currentPage * this.dropValue;
-          console.log(lastNum);
           this.filteredItems = this.items.slice(
             lastNum - this.dropValue,
             lastNum
@@ -37,10 +36,8 @@ export default class Shop {
           this.items = this.store.getItems();
           this.currentPage = this.store.getCurrentPage();
           this.dropValue = this.store.getDropValue();
-          console.log("currnt", this.currentPage, "drop", this.dropValue);
 
           const lastNum = this.currentPage * this.dropValue;
-          console.log(lastNum);
           this.filteredItems = this.items.slice(
             lastNum - this.dropValue,
             lastNum
