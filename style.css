@@ -1,3 +1,128 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,14 +154,17 @@ a {
 }
 .dropDown__select {
   position: absolute;
+  bottom: 25px;
   right: 25px;
-  font-size: 17px;
+  font-size: 12px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .dropDown__input {
-  padding: 15px;
-  width: 270px;
+  padding: 10px;
+  width: 200px;
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0.6);
   outline: none;
@@ -46,11 +174,11 @@ a {
 }
 .dropDown__input:focus {
   transition: 0.3s ease-in-out;
-  width: 400px;
+  width: 270px;
 }
 .dropDown__input:not(focuse) {
   transition: 0.3s ease-in-out;
-  width: 270px;
+  width: 200px;
 }
 
 #pagination {
@@ -87,6 +215,10 @@ a {
   color: white;
   padding: 25px 70px;
   margin-bottom: 30px;
+}
+.nav__title {
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .cart {
@@ -147,20 +279,6 @@ a {
   gap: 30px;
   flex-direction: column;
 }
-
-@media (min-width: 768px) {
-  .shop,
-  .cart {
-    grid-template-columns: repeat(2, 250px);
-  }
-}
-@media (min-width: 1024px) {
-  .shop,
-  .cart {
-    grid-template-columns: repeat(4, 250px);
-  }
-}
-
 .item {
   height: 450px;
   border: 2px solid #212529;
@@ -221,4 +339,39 @@ a {
 }
 #OfficeShirt-2 {
   background-color: hotpink;
+}
+
+@media (min-width: 768px) {
+  .shop,
+  .cart {
+    grid-template-columns: repeat(2, 250px);
+  }
+  .dropDown__input {
+    width: 270px;
+  }
+  .dropDown__input:focus {
+    width: 350px;
+  }
+  .dropDown__input:not(focus) {
+    width: 270px;
+  }
+}
+@media (min-width: 1024px) {
+  .shop,
+  .cart {
+    grid-template-columns: repeat(4, 250px);
+  }
+  .dropDown__input {
+    width: 300px;
+  }
+  .dropDown__input:focus {
+    width: 400px;
+  }
+  .dropDown__input:not(focus) {
+    width: 300px;
+  }
+  .dropDown__select {
+    font-size: 15px;
+    padding: 5px;
+  }
 }
